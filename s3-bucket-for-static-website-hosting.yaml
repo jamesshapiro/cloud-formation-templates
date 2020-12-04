@@ -1,3 +1,15 @@
+Description: This template creates a bucket that is publicly accessible
+  and automatically configured for static web hosting
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Bucket Configuration
+        Parameters:
+          - MyBucketName
+    ParameterLabels:
+      MyBucketName:
+        default: The name of your S3 bucket, please make sure that it is a legal S3 name and bear in mind that all S3 names must be globally unique -- generic names are likely to already be taken.
 Parameters:
   MyBucketName:
     Type: String
