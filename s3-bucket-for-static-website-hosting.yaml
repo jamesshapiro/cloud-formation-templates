@@ -4,15 +4,19 @@ Metadata:
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
-          default: Bucket Configuration
+          default: Bucket Name
         Parameters:
           - MyBucketName
     ParameterLabels:
       MyBucketName:
-        default: The name of your S3 bucket, please make sure that it is a legal S3 name and bear in mind that all S3 names must be globally unique -- generic names are likely to already be taken.
+        default: The name of your S3 bucket. Must be globally unique -- generic names are probably already claimed. Bucket names must be between 3 and 63 characters long. Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-). Bucket names must begin and end with a letter or number.
 Parameters:
   MyBucketName:
     Type: String
+    AllowedPattern: "[a-z0-9]+[a-z0-9.-]+[a-z0-9]+"
+    MinLength: 3
+    MaxLength: 63
+    ConstraintDescription: Bucket names must be between 3 and 63 characters long. Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-). Bucket names must begin and end with a letter or number.
 Resources:
   VeryPublicBucket:
     Type: AWS::S3::Bucket
