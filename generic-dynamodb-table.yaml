@@ -7,6 +7,8 @@ Parameters:
 Resources:
   dynamodbTable:
     Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
     Properties:
       AttributeDefinitions:
         - 
