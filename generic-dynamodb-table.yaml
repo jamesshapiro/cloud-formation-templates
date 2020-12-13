@@ -1,0 +1,29 @@
+Description: This template creates a DynamoDB table with generic PK1/SK1 Hash/Range keys
+  and on-demand billing by default
+
+Parameters:
+  MyBucketName:
+    Type: String
+Resources:
+  dynamodbTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - 
+          AttributeName: "PK1"
+          AttributeType: "S"
+        - 
+          AttributeName: "SK1"
+          AttributeType: "S"
+      KeySchema:
+        - 
+          AttributeName: "PK1"
+          KeyType: "HASH"
+        - 
+          AttributeName: "SK1"
+          KeyType: "RANGE"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: !Ref MyBucketName
+
+
+
