@@ -19,6 +19,8 @@ Parameters:
     ConstraintDescription: Bucket names must be between 3 and 63 characters long. Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-). Bucket names must begin and end with a letter or number.
 Resources:
   VeryPublicBucket:
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Ref MyBucketName
@@ -36,6 +38,8 @@ Resources:
         IndexDocument: index.html
   UploadToPublicBucketRole:
     Type: AWS::IAM::Role
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
     Properties:
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
@@ -49,6 +53,8 @@ Resources:
               - "sts:AssumeRole"
   VeryPublicBucketPolicy:
     Type: AWS::S3::BucketPolicy
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
     Properties:
       PolicyDocument:
         Id: MyPolicy
