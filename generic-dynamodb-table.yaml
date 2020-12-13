@@ -2,7 +2,7 @@ Description: This template creates a DynamoDB table with generic PK1/SK1 Hash/Ra
   and on-demand billing by default
 
 Parameters:
-  MyBucketName:
+  MyTableName:
     Type: String
 Resources:
   dynamodbTable:
@@ -25,7 +25,7 @@ Resources:
           AttributeName: "SK1"
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
-      TableName: !Ref MyBucketName
+      TableName: !Ref MyTableName
 
 
 
