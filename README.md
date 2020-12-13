@@ -4,6 +4,8 @@
 
 1. [S3 Bucket Configured for Static Website Hosting](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=staticwebhostbucket&templateURL=https://002-cf-templates.s3.amazonaws.com/s3-bucket-for-static-website-hosting.yaml) ([Source Code](https://github.com/jamesshapiro/cloud-formation-templates/blob/master/s3-bucket-for-static-website-hosting.yaml))
 
+1. [Generic DDB Table with "PK1"/"SK1" Hash/Range Keys and On-Demand Billing](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=genericDDBTable&templateURL=https://002-cf-templates.s3.amazonaws.com/generic-dynamodb-table.yaml) ([Source Code](https://github.com/jamesshapiro/cloud-formation-templates/blob/master/generic-dynamodb-table.yaml))
+
 ## Notes:
 
 ### s3-bucket-for-static-website-hosting.yaml
