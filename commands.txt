@@ -1,0 +1,8 @@
+aws cloudformation deploy --template-file api-gateway-lambda-proxy.yaml --region us-east-1 --stack-name test-api-gateway --capabilities CAPABILITY_IAM
+
+curl -X -H "Content-Type: application/json" -d '{ "key": "value" }' "https://73gheqyyjf.execute-api.us-east-1.amazonaws.com/test/" 
+curl "https://73gheqyyjf.execute-api.us-east-1.amazonaws.com/test/" 
+
+
+
+curl -X POST -H "Content-Type: application/json" "https://eq9sgc8lh2.execute-api.us-east-1.amazonaws.com/test/register/" -d {}
